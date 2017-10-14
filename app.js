@@ -1,6 +1,6 @@
 'use strict';
 //create an array of open store hours
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 //First and Pike Location
 var firstAndPike = {
@@ -11,7 +11,7 @@ var firstAndPike = {
   avgCookieSoldPerHour: 6.3,
   randCustByHour: [],
   cookiesSoldByHour: [],
-  totalCookies: 0,
+  totalCookies: [],
   //method for random customers by hour
   calcRandCustByHour: function() {
     for(var i = 0; i < hours.length; i++) {
@@ -27,12 +27,25 @@ var firstAndPike = {
       console.log(this.cookiesSoldByHour[j]);
     }
   },
+
+  //Method for calculating total cookies
+  calcTotalCookies: function() {
+    var sum = 0;
+    for(var l = 0; l < hours.length; l++) {
+      sum += (this.randCustByHour[l] + this.cookiesSoldByHour[l]);
+      console.log('Total ' + sum);
+
+    }
+    this.totalCookies.push(sum);
+    console.log('Total: ' + sum);
+  },
   render: function() {
     var firstandpike = document.getElementById('firstandpike');
     var fandp = document.getElementById('fandp');
     //calling the methods in the object literal
     this.calcRandCustByHour();
     this.calcCookiesSoldByHour();
+    this.calcTotalCookies();
     //DOM manipulation irl!!!
     //create a vairable to abe able to append an item to our list
     //create a new h3 element
@@ -48,6 +61,9 @@ var firstAndPike = {
       console.log(liEl);
       firstandpike.appendChild(liEl);
     }
+    var totalEl = document.createElement('li');
+    totalEl.textContent = 'Total: ' + this.totalCookies[0] + ' cookies';
+    firstandpike.appendChild(totalEl);
   }
 
 };
@@ -62,7 +78,7 @@ var seaTacArpt = {
   avgCookieSoldPerHour: 1.2,
   randCustByHour: [],
   cookiesSoldByHour: [],
-  totalCookies: 0,
+  totalCookies: [],
   //method for random customers by hour
   calcRandCustByHour: function() {
     for(var i = 0; i < hours.length; i++) {
@@ -78,12 +94,25 @@ var seaTacArpt = {
       console.log(this.cookiesSoldByHour[j]);
     }
   },
+
+  //Method for calculating total cookies
+  calcTotalCookies: function() {
+    var sum = 0;
+    for(var l = 0; l < hours.length; l++) {
+      sum += (this.randCustByHour[l] + this.cookiesSoldByHour[l]);
+      console.log('Total ' + sum);
+
+    }
+    this.totalCookies.push(sum);
+    console.log('Total: ' + sum);
+  },
   render: function() {
     var seaTacArpt = document.getElementById('seaTacArpt');
     var seaTA = document.getElementById('seaTA');
     //calling the methods in the object literal
     this.calcRandCustByHour();
     this.calcCookiesSoldByHour();
+    this.calcTotalCookies();
     //DOM manipulation irl!!!
     //create a vairable to abe able to append an item to our list
     //create a new h3 element
@@ -99,6 +128,9 @@ var seaTacArpt = {
       console.log(liEl);
       seaTacArpt.appendChild(liEl);
     }
+    var totalEl = document.createElement('li');
+    totalEl.textContent = 'Total: ' + this.totalCookies[0] + ' cookies';
+    seaTacArpt.appendChild(totalEl);
   }
 
 };
@@ -113,7 +145,7 @@ var seattleCenter = {
   avgCookieSoldPerHour: 3.7,
   randCustByHour: [],
   cookiesSoldByHour: [],
-  totalCookies: 0,
+  totalCookies: [],
   //method for random customers by hour
   calcRandCustByHour: function() {
     for(var i = 0; i < hours.length; i++) {
@@ -129,12 +161,25 @@ var seattleCenter = {
       console.log(this.cookiesSoldByHour[j]);
     }
   },
+
+  //Method for calculating total cookies
+  calcTotalCookies: function() {
+    var sum = 0;
+    for(var l = 0; l < hours.length; l++) {
+      sum += (this.randCustByHour[l] + this.cookiesSoldByHour[l]);
+      console.log('Total ' + sum);
+
+    }
+    this.totalCookies.push(sum);
+    console.log('Total: ' + sum);
+  },
   render: function() {
     var seattleCenter = document.getElementById('seattleCenter');
     var seacen = document.getElementById('seacen');
     //calling the methods in the object literal
     this.calcRandCustByHour();
     this.calcCookiesSoldByHour();
+    this.calcTotalCookies();
     //DOM manipulation irl!!!
     //create a vairable to abe able to append an item to our list
     //create a new h3 element
@@ -150,6 +195,9 @@ var seattleCenter = {
       console.log(liEl);
       seattleCenter.appendChild(liEl);
     }
+    var totalEl = document.createElement('li');
+    totalEl.textContent = 'Total: ' + this.totalCookies[0] + ' cookies';
+    seattleCenter.appendChild(totalEl);
   }
 
 };
@@ -164,7 +212,7 @@ var capitolHill = {
   avgCookieSoldPerHour: 2.3,
   randCustByHour: [],
   cookiesSoldByHour: [],
-  totalCookies: 0,
+  totalCookies: [],
   //method for random customers by hour
   calcRandCustByHour: function() {
     for(var i = 0; i < hours.length; i++) {
@@ -180,12 +228,25 @@ var capitolHill = {
       console.log(this.cookiesSoldByHour[j]);
     }
   },
+
+  //Method for calculating total cookies
+  calcTotalCookies: function() {
+    var sum = 0;
+    for(var l = 0; l < hours.length; l++) {
+      sum += (this.randCustByHour[l] + this.cookiesSoldByHour[l]);
+      console.log('Total ' + sum);
+
+    }
+    this.totalCookies.push(sum);
+    console.log('Total: ' + sum);
+  },
   render: function() {
     var capitolHill = document.getElementById('capitolHill');
     var caphill = document.getElementById('caphill');
     //calling the methods in the object literal
     this.calcRandCustByHour();
     this.calcCookiesSoldByHour();
+    this.calcTotalCookies();
     //DOM manipulation irl!!!
     //create a vairable to abe able to append an item to our list
     //create a new h3 element
@@ -201,6 +262,9 @@ var capitolHill = {
       console.log(liEl);
       capitolHill.appendChild(liEl);
     }
+    var totalEl = document.createElement('li');
+    totalEl.textContent = 'Total: ' + this.totalCookies[0] + ' cookies';
+    capitolHill.appendChild(totalEl);
   }
 
 };
@@ -215,7 +279,7 @@ var alki = {
   avgCookieSoldPerHour: 4.6,
   randCustByHour: [],
   cookiesSoldByHour: [],
-  totalCookies: 0,
+  totalCookies: [],
   //method for random customers by hour
   calcRandCustByHour: function() {
     for(var i = 0; i < hours.length; i++) {
@@ -231,12 +295,25 @@ var alki = {
       console.log(this.cookiesSoldByHour[j]);
     }
   },
+
+  //Method for calculating total cookies
+  calcTotalCookies: function() {
+    var sum = 0;
+    for(var l = 0; l < hours.length; l++) {
+      sum += (this.randCustByHour[l] + this.cookiesSoldByHour[l]);
+      console.log('Total ' + sum);
+
+    }
+    this.totalCookies.push(sum);
+    console.log('Total: ' + sum);
+  },
   render: function() {
     var alki = document.getElementById('alki');
     var aki = document.getElementById('aki');
     //calling the methods in the object literal
     this.calcRandCustByHour();
     this.calcCookiesSoldByHour();
+    this.calcTotalCookies();
     //DOM manipulation irl!!!
     //create a vairable to abe able to append an item to our list
     //create a new h3 element
@@ -252,6 +329,9 @@ var alki = {
       console.log(liEl);
       alki.appendChild(liEl);
     }
+    var totalEl = document.createElement('li');
+    totalEl.textContent = 'Total: ' + this.totalCookies[0] + ' cookies';
+    alki.appendChild(totalEl);
   }
 
 };

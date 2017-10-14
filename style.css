@@ -1,4 +1,8 @@
 *{
   font-family: sans-serif;
-  background-color: blue;
+  background-image: url("paper.gif");
+    background-color: #3D9970;
+}
+h1{
+  font-family: georgia;
 }
